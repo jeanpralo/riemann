@@ -161,7 +161,8 @@
         (cond->
           {:socket-timeout (:timeout opts 5000) ; ms
            :conn-timeout   (:timeout opts 5000) ; ms
-           :content-type   :json}
+           :content-type   :json
+	   :insecure? (:insecure opts false)}
           (:username opts)
             (assoc :basic-auth [(:username opts)
                                 (:password opts)]))
